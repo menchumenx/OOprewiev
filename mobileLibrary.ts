@@ -14,6 +14,7 @@ private totalPrice : number;
         this.name = name;
         this.location = location;
         this.mobiles = mobiles;
+        this.totalPrice = this.totalPriceCalculation()
     }
 
 //getters y setters
@@ -46,14 +47,19 @@ setTotalPrice(totalPrice : number){
 //  metodo total price
 //let mobiles : Mobile[] = [ nokia_3210, iphone_3G, samsung_Galaxy_10 ];
 
-totalPriceCalculation(){
+private totalPriceCalculation():number{
     let resultado : number = 0;
     for(let i = 0; i < this.mobiles.length; i++){
         resultado = this.mobiles[i].getPrice() + resultado;
     }
-    console.log(resultado)
-
+    return resultado
 }
-
+pintLibrary(){
+   let allM : string= "";
+    for (let i = 0; i < this.mobiles.length; i++){
+        allM += this.mobiles[i].printProperties()
+    }
+    console.log("this are all my mobiles" + "\n" + allM + "\n" + "Price overvall: " + this.totalPrice+ "\n" );
+}
 
 }
