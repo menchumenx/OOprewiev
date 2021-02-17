@@ -21,5 +21,15 @@ console.log(ml_1.getMobiles());
 ml_1.setName("mobiles plaza");
 console.log(ml_1.getName());
 
-// calcular precio total
-ml_1.totalPriceCalculation()
+// calcular precio total --- > privada
+console.log(ml_1.totalPriceCalculation())
+
+let iphone_11 : Mobile = new Mobile("iphone11", "5g", "iphone", 264, "black", true, 2, 900);
+let samsung_Galaxy_X : Mobile = new Mobile("samsungGalaxy", "galaxyX", "samsung", 125, "plata", true, 2, 890);
+
+let mobiles_2 : Mobile[] = [iphone_3G, samsung_Galaxy_10];
+
+// objetos de  librery
+let ml_2 : MovileLibrary = new MovileLibrary ("the phone hause", "torrejon de ardoz", [iphone_11, samsung_Galaxy_X] )
+
+ml_2.pintLibrary();
